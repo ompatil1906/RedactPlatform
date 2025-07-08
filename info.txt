@@ -1,0 +1,15 @@
+Implementing this feature would involve:
+
+1. Locating sensitive data within the PDF's visual structure : This means identifying the exact coordinates and pages where the sensitive information appears.
+2. Redacting or replacing content within the PDF : This often involves drawing shapes over the sensitive text or manipulating the PDF's content streams, which is a complex task.
+3. Saving the modified PDF : Creating a new PDF file with the changes.- The application reads the uploaded PDF file into pdf_document .
+
+- It extracts full_pdf_text from all pages of the PDF.
+
+- The analyze function is called with full_pdf_text to detect sensitive entities, storing the results in pdf_analyzer_results .
+
+- The redact_pdf function is then called with the pdf_document and pdf_analyzer_results . This function iterates through each detected sensitive entity ( result in analyze_results ), uses result.word to find occurrences of that specific word within each page of the PDF, and applies a redaction annotation directly to those instances. Finally, it applies all redactions and returns the modified PDF as bytes.
+
+
+
+LLmWhisper API = PXTJb5JDBOoZKTiqxV93aocxgtyaphlQRJyuGmqJRz0
