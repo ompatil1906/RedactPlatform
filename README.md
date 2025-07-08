@@ -5,6 +5,9 @@
 LLMWHISPERER_API_KEY=your_api_key_here
 LLMWHISPERER_API_URL=https://llmwhisperer-api.us-central.unstract.com/api/v2
 
+# Install dependencies
+pip install -r requirements.txt
+
 
 # Run
 streamlit run presidio_streamlit.py
